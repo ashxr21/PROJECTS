@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Banking System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bank-card">
+            <h1>💳 City Bank</h1>
+
+            <div class="balance-section">
+                <p>Current Balance</p>
+                <h2 id="balance-el">$0.00</h2>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="amount-el" placeholder="Enter amount">
+            </div>
+
+            <div class="buttons">
+                <button id="deposit-btn" onclick="deposit()">Deposit</button>
+                <button id="withdraw-btn" onclick="withdraw()">Withdraw</button>
+            </div>
+
+            <div class="history">
+                <h3>Transaction History</h3>
+                <ul id="history-list">
+                    <li>No transactions yet.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
