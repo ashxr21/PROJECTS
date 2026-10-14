@@ -1,0 +1,372 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Expense Tracker</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="app">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+
+                <div class="logo">
+                    <h1>Spendly</h1>
+                    <p>Expense Tracker</p>
+                </div>
+
+                <nav>
+                    <a href="#" class="nav-link active">
+                        <span>⌂</span>
+                        Dashboard
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>↕</span>
+                        Transactions
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>◉</span>
+                        Categories
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>⚙</span>
+                        Settings
+                    </a>
+                </nav>
+
+            </aside>
+
+
+            <!-- MAIN -->
+            <main class="main">
+
+                <!-- HEADER -->
+                <header class="header">
+
+                    <div>
+                        <p class="eyebrow">Dashboard</p>
+                        <h2>Good morning 👋</h2>
+                    </div>
+
+                    <button class="add-btn">
+                        + Add Expense
+                    </button>
+
+                </header>
+
+
+                <!-- SUMMARY -->
+                <section class="summary-grid">
+
+                    <div class="summary-card">
+
+                        <div class="card-label">
+                            <span>Total Balance</span>
+                            <div class="card-icon balance">₱</div>
+                        </div>
+
+                        <h3 id="balance">₱0.00</h3>
+
+                        <p>Current balance</p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="card-label">
+                            <span>Income</span>
+                            <div class="card-icon income">↑</div>
+                        </div>
+
+                        <h3 id="income">₱0.00</h3>
+
+                        <p>Total income</p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="card-label">
+                            <span>Expenses</span>
+                            <div class="card-icon expense">↓</div>
+                        </div>
+
+                        <h3 id="expenses">₱0.00</h3>
+
+                        <p>Total expenses</p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CONTENT -->
+                <section class="dashboard-grid">
+
+                    <!-- TRANSACTIONS -->
+                    <div class="transactions-card">
+
+                        <div class="section-heading">
+
+                            <div>
+                                <h3>Recent Transactions</h3>
+                                <p>Your latest expenses and income</p>
+                            </div>
+
+                            <button class="view-btn">
+                                View All
+                            </button>
+
+                        </div>
+
+
+                        <!-- EMPTY STATE -->
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                +
+                            </div>
+
+                            <h4>No transactions yet</h4>
+
+                            <p>
+                                Add your first expense to start
+                                tracking your money.
+                            </p>
+
+                            <button class="empty-btn">
+                                Add Transaction
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADD TRANSACTION -->
+                    <div class="form-card">
+
+                        <div class="section-heading">
+
+                            <div>
+                                <h3>Add Transaction</h3>
+                                <p>Record your income or expense</p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="transaction-form">
+
+                            <!-- DESCRIPTION -->
+                            <div class="form-group">
+
+                                <label for="description">
+                                    Description
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="description"
+                                    placeholder="e.g. Groceries"
+                                >
+
+                            </div>
+
+
+                            <!-- AMOUNT -->
+                            <div class="form-group">
+
+                                <label for="amount">
+                                    Amount
+                                </label>
+
+                                <div class="amount-input">
+
+                                    <span>₱</span>
+
+                                    <input
+                                        type="number"
+                                        id="amount"
+                                        placeholder="0.00"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- CATEGORY -->
+                            <div class="form-group">
+
+                                <label for="category">
+                                    Category
+                                </label>
+
+                                <select id="category">
+
+                                    <option value="">
+                                        Select a category
+                                    </option>
+
+                                    <option value="food">
+                                        Food
+                                    </option>
+
+                                    <option value="transportation">
+                                        Transportation
+                                    </option>
+
+                                    <option value="shopping">
+                                        Shopping
+                                    </option>
+
+                                    <option value="bills">
+                                        Bills
+                                    </option>
+
+                                    <option value="entertainment">
+                                        Entertainment
+                                    </option>
+
+                                    <option value="health">
+                                        Health
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- TYPE -->
+                            <div class="form-group">
+
+                                <label>
+                                    Transaction Type
+                                </label>
+
+                                <div class="type-selector">
+
+                                    <button
+                                        type="button"
+                                        class="type-option active"
+                                        data-type="expense"
+                                    >
+                                        Expense
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="type-option"
+                                        data-type="income"
+                                    >
+                                        Income
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="submit-btn"
+                            >
+                                Add Transaction
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- BOTTOM SECTION -->
+                <section class="bottom-grid">
+
+                    <!-- SPENDING BREAKDOWN -->
+                    <div class="breakdown-card">
+
+                        <div class="section-heading">
+
+                            <div>
+                                <h3>Spending Breakdown</h3>
+                                <p>See where your money goes</p>
+                            </div>
+
+                        </div>
+
+                        <div class="breakdown-empty">
+
+                            <div class="chart-placeholder">
+                                <span>₱</span>
+                            </div>
+
+                            <p>
+                                Your spending breakdown will
+                                appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MONTHLY BUDGET -->
+                    <div class="budget-card">
+
+                        <div class="section-heading">
+
+                            <div>
+                                <h3>Monthly Budget</h3>
+                                <p>Set a spending limit</p>
+                            </div>
+
+                            <button class="settings-btn">
+                                ⚙
+                            </button>
+
+                        </div>
+
+
+                        <div class="budget-empty">
+
+                            <h4>No budget set</h4>
+
+                            <p>
+                                Create a monthly budget to keep
+                                your spending under control.
+                            </p>
+
+                            <button class="budget-btn">
+                                Set Budget
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
